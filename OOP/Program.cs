@@ -23,6 +23,7 @@ class Rectangle
 
     readonly int NumberOfSides; //Not a must to assign a value
 
+    private string Name { get;  set;}
 
     public Rectangle(int width, int height)
     {
