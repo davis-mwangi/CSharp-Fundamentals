@@ -1,56 +1,31 @@
-﻿namespace OOP;
+﻿using  OOP.OOPClasses;
+using OOP.Inheritance;
+
 class Program
 {
     static void Main(string[] args)
     {
-
+        /*
         DateTime dateTime = new DateTime();
         dateTime.AddDays(3);
 
         Rectangle rectangle = new Rectangle(-5, 10);
         Console.WriteLine($"Width is {rectangle.GetWidth()}");
         Console.WriteLine($"Height is {rectangle.GetHeight()}");
+        */
+
+        var numbers = new List<int> { 1, 4, 6, -1, 12, 44, -8, -19 };
+        bool shallAddPositiveOnly = true;
+
+        NumbersSumCalculator calculator = shallAddPositiveOnly ?
+            new PositiveNumbersSumCalculator() :
+            new NumbersSumCalculator();
+
+        int sum = calculator.Calculate(numbers);
+        Console.WriteLine("Sum is:: " + sum);
 
         Console.ReadKey();
 
     }
 }
-
-class Rectangle
-{
-    private int Width; //public variable
-    private int Height; //public variable
-
-    readonly int NumberOfSides; //Not a must to assign a value
-
-    private string Name { get;  set;}
-
-    public Rectangle(int width, int height)
-    {
-        Width = GetLengthOrDefault(width, nameof(Width)); // nameof returns Width
-        Height = GetLengthOrDefault(height, nameof(Height)); // nameof returns Height
-    }
-
-    private int GetLengthOrDefault(int length, string name)
-    {
-        const int defaultValueIfNonPositive = 1;//const field must be assigned a value
-        if (length <= 0)
-        {
-            Console.WriteLine($"{name} must be a positive number.");
-            return defaultValueIfNonPositive;
-        }
-        return length;
-    }
-
-    public int GetWidth()
-    {
-        return Width;
-    }
-
-    public int GetHeight()
-    {
-        return Height;
-    }
-}
-
 

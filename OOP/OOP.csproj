@@ -7,4 +7,12 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Inheritance\" />
+    <None Remove="OOPClasses\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Inheritance\" />
+    <Folder Include="OOPClasses\" />
+  </ItemGroup>
 </Project>
